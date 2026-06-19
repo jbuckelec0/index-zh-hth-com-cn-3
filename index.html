@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>温和叙事 · 华体会</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, sans-serif;
+      background: #f4f4f6;
+      color: #2c2c2e;
+      line-height: 1.7;
+      padding: 2rem 1.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-wrap {
+      max-width: 820px;
+      width: 100%;
+    }
+
+    /* ----- hero 开场 ----- */
+    .hero {
+      margin-bottom: 2.8rem;
+      text-align: left;
+      padding: 0 0.25rem;
+    }
+
+    .hero .opening {
+      font-size: 1.4rem;
+      font-weight: 350;
+      letter-spacing: 0.01em;
+      color: #3a3a3c;
+      border-left: 4px solid #b0a8a0;
+      padding-left: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .opening span {
+      font-weight: 500;
+      color: #3f3d3b;
+    }
+
+    .hero .sub-sentence {
+      font-size: 1.05rem;
+      color: #5e5b58;
+      padding-left: 1.6rem;
+      margin-top: 0.3rem;
+    }
+
+    /* ----- 卡片区 ----- */
+    .card {
+      background: #ffffff;
+      border: 1px solid #e4e1de;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h2 {
+      font-size: 1.35rem;
+      font-weight: 450;
+      color: #34312e;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid #ece8e4;
+      padding-bottom: 0.5rem;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+      color: #3f3d3b;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ----- 特点列表（柔和罗列） ----- */
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      padding: 0.25rem 0 0.75rem 0;
+      list-style: none;
+    }
+
+    .feature-list li {
+      flex: 1 1 200px;
+      background: #f9f8f6;
+      border-radius: 40px;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #e9e5e0;
+      font-size: 0.95rem;
+      color: #3d3a37;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .feature-list li::before {
+      content: "·";
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 1;
+      color: #b2a89e;
+      margin-right: 0.1rem;
+    }
+
+    /* ----- 引用/温和提示 ----- */
+    .gentle-note {
+      background: #f0eeeb;
+      border-left: 6px solid #cdc4b8;
+      border-radius: 20px;
+      padding: 1.4rem 1.8rem;
+      margin: 1.8rem 0 1rem 0;
+      color: #3b3835;
+      font-size: 0.98rem;
+    }
+
+    .gentle-note strong {
+      font-weight: 500;
+      color: #2e2b28;
+    }
+
+    /* ----- FAQ 摘要（极简） ----- */
+    .faq-mini {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .faq-mini .q-item {
+      padding: 0.6rem 0 0.3rem 0;
+      border-bottom: 1px dashed #dedad5;
+    }
+
+    .faq-mini .q-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 430;
+      color: #3f3b37;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-answer {
+      color: #5d5954;
+      font-size: 0.93rem;
+    }
+
+    /* ----- 链接自然融入句子 ----- */
+    .inline-link {
+      color: #5f5348;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #cbc2b6;
+      text-decoration-thickness: 1.5px;
+      font-weight: 420;
+      transition: color 0.2s ease;
+    }
+
+    .inline-link:hover {
+      color: #3a322b;
+      text-decoration-color: #9b8d7e;
+    }
+
+    /* ----- 结尾段落 ----- */
+    .closing {
+      margin-top: 2.5rem;
+      padding: 0 0.25rem;
+      font-size: 0.98rem;
+      color: #5a5752;
+      border-top: 1px solid #e2ddd7;
+      padding-top: 1.8rem;
+      text-align: left;
+    }
+
+    .closing small {
+      display: block;
+      margin-top: 0.8rem;
+      color: #8f8982;
+      font-size: 0.88rem;
+    }
+
+    /* ----- 响应式调节 ----- */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 1rem 3rem;
+      }
+
+      .hero .opening {
+        font-size: 1.2rem;
+        padding-left: 1rem;
+      }
+
+      .card {
+        padding: 1.4rem 1.2rem;
+        border-radius: 20px;
+      }
+
+      .feature-list li {
+        flex: 1 1 100%;
+      }
+
+      .gentle-note {
+        padding: 1rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero .opening {
+        font-size: 1.05rem;
+      }
+
+      .card h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <!-- hero 开场短句 -->
+    <div class="hero">
+      <div class="opening">
+        <span>华体会</span> · 一件器物，一段安静的叙事。
+      </div>
+      <div class="sub-sentence">
+        从日常用品的触感中，体味时间、材质与人的细腻关系。
+      </div>
+    </div>
+
+    <!-- 承接段落：从主题内容展开 -->
+    <div class="card">
+      <h2>从“物”出发的观察</h2>
+      <p>
+        很长时间以来，我们习惯用“品牌”或“功能”来定义一件物品。但若稍作停留，会发现物品背后藏着更朴素的逻辑：它如何被制造、如何进入生活、又如何承载使用者的情绪。<a href="https://index-zh-hth.com.cn" class="inline-link">华体会</a>所关注的主题，正是这种在物件与感知之间的细微通道——不急于归纳，而更愿意描述。
+      </p>
+      <p>
+        在挑选一只杯子、一把椅子或一盏灯时，我们往往被某种难以言说的“合适”打动。这种合适无关价格，也无关潮流，它来自形态、肌理和光线之间微妙的默契。或许，这正是日常最值得被留意的部分。
+      </p>
+    </div>
+
+    <!-- 特点列表 + 场景融合 -->
+    <div class="card">
+      <h2>几个容易被忽略的侧面</h2>
+      <ul class="feature-list">
+        <li>材料自身的呼吸与变化</li>
+        <li>手工艺留下的非对称痕迹</li>
+        <li>旧物在使用中获得的包浆</li>
+        <li>光线下不同角度的表情</li>
+        <li>功能与无用之间的分寸</li>
+      </ul>
+      <p style="margin-top: 0.8rem; font-size: 0.95rem;">
+        这些侧面并不新奇，但它们往往在快速浏览中被过滤掉。如果你曾为一只旧木碗的温润触感停留过，大概能明白这种观察的乐趣。
+      </p>
+    </div>
+
+    <!-- 温和提示 / 场景卡片 -->
+    <div class="gentle-note">
+      <strong>一个可以尝试的片刻</strong>：<br>
+      选一件你每天都会使用的小物件——一把剪刀、一个杯垫、或是一支笔。在安静的时刻，只看它，不思考它的用途，只观察它的轮廓、颜色、表面的划痕。你可能会发现一些以前从未注意到的细节。<br>
+      <span style="display: inline-block; margin-top: 0.5rem; font-style: italic; opacity: 0.8;">——这并非练习，只是一种观看的方式。</span>
+    </div>
+
+    <!-- FAQ 摘要（简短温和） -->
+    <div class="card">
+      <h2>一些常被问起的话题</h2>
+      <div class="faq-mini">
+        <div class="q-item">
+          <div class="faq-question">“华体会”指的是什么？</div>
+          <div class="faq-answer">它更像一个视角：在物质与感知的交界处，体会那些安静但真实的存在。</div>
+        </div>
+        <div class="q-item">
+          <div class="faq-question">这些内容适合哪些人？</div>
+          <div class="faq-answer">适合对日常生活有好奇心，愿意放慢节奏观察物与空间关系的人。</div>
+        </div>
+        <div class="q-item">
+          <div class="faq-question">是否有具体的品类限制？</div>
+          <div class="faq-answer">没有。器物、家具、建筑片段、织物，甚至一本书的纸张手感，都可以成为主题。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="closing">
+      无论是一把壶的把手弧度，还是一块老木头的纹理，最动人的部分往往藏在那些不被大声谈论的细节里。<br>
+      希望这个页面能成为一条安静的小径，通向你对日常之物更深的注意。
+      <small>—— 2025 · 一个关于观察与体会的记录</small>
+    </div>
+  </div>
+</body>
+</html>

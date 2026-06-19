@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jbuckelec0.github.io/index-zh-hth-com-cn-3/sitemap.xml
