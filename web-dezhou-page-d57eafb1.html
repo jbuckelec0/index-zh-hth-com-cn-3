@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>德州扑克在线 · 稳定入口说明</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f7fa;
+            color: #1e1e2f;
+            line-height: 1.6;
+        }
+
+        /* 深色头图区 —— 沉稳哑光背景，细渐变纹理 */
+        .hero {
+            background: linear-gradient(145deg, #1c1e2b 0%, #282c3e 100%);
+            color: #eaeef5;
+            padding: 4rem 2rem 3.2rem;
+            text-align: center;
+            border-bottom: 1px solid #3a3f52;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.6rem;
+            color: #f0eae1;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            font-weight: 300;
+            max-width: 640px;
+            margin: 0.4rem auto 1.6rem;
+            color: #b9c3d4;
+        }
+
+        .hero .meta-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(2px);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #b2bed6;
+            letter-spacing: 0.3px;
+        }
+
+        /* 正文容器 — 浅色区域，留白充裕 */
+        .content {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
+        /* 摘要卡片 */
+        .summary-card {
+            background: #ffffff;
+            padding: 2rem 2.2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+            margin-bottom: 2.8rem;
+            border: 1px solid #e8ecf2;
+        }
+
+        .summary-card h2 {
+            font-size: 1.6rem;
+            font-weight: 450;
+            margin-bottom: 1rem;
+            color: #1c1e2b;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .summary-card p {
+            font-size: 1.02rem;
+            color: #2e3346;
+            margin-bottom: 0.9rem;
+        }
+
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .accent-link {
+            color: #1d6f8f;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.15s;
+        }
+
+        .accent-link:hover {
+            color: #114a63;
+            border-bottom: 1px solid #7facc4;
+        }
+
+        /* 亮点 —— 三列网格，卡片式 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.6rem;
+            margin: 2.8rem 0 2.2rem;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            padding: 1.6rem 1.4rem;
+            border-radius: 16px;
+            border: 1px solid #e5eaf1;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1f2a3f;
+            letter-spacing: 0.01em;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #3e4559;
+            line-height: 1.5;
+        }
+
+        .feature-icon {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            line-height: 1;
+            opacity: 0.7;
+        }
+
+        /* 使用建议 — 场景说明 */
+        .scenario-section {
+            background: #f8faff;
+            border-radius: 18px;
+            padding: 1.8rem 2.2rem;
+            margin: 2.5rem 0 2rem;
+            border-left: 4px solid #5b7e9b;
+        }
+
+        .scenario-section h3 {
+            font-size: 1.3rem;
+            font-weight: 480;
+            margin-bottom: 0.9rem;
+            color: #1f2937;
+        }
+
+        .scenario-section ul {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.8rem;
+        }
+
+        .scenario-section li {
+            position: relative;
+            padding-left: 1.2rem;
+            color: #2d3447;
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        .scenario-section li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #4f7793;
+            font-weight: 400;
+        }
+
+        /* 可信说明 — 克制的访问提示 */
+        .notice-callout {
+            background: #ffffff;
+            border: 1px solid #dce2ec;
+            border-radius: 16px;
+            padding: 1.6rem 2rem;
+            margin: 2.2rem 0 1.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.8rem 1.4rem;
+        }
+
+        .notice-callout .label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #5b6b82;
+            background: #eef2f8;
+            padding: 0.25rem 0.7rem;
+            border-radius: 30px;
+        }
+
+        .notice-callout p {
+            flex: 1;
+            font-size: 1rem;
+            color: #2a3043;
+            margin: 0;
+        }
+
+        .faq-mini {
+            margin: 2.2rem 0 1.5rem;
+            border-top: 1px solid #e2e7ef;
+            padding-top: 1.4rem;
+        }
+
+        .faq-mini details {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #edf0f5;
+        }
+
+        .faq-mini details:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-mini summary {
+            font-weight: 480;
+            font-size: 1rem;
+            color: #1b2538;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-mini summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-mini summary::before {
+            content: "+";
+            display: inline-block;
+            width: 1.3rem;
+            color: #4a6b83;
+            font-weight: 300;
+            font-size: 1.1rem;
+        }
+
+        .faq-mini details[open] summary::before {
+            content: "–";
+        }
+
+        .faq-mini .faq-answer {
+            padding: 0.5rem 0 0.5rem 1.6rem;
+            color: #394256;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            margin-top: 3.2rem;
+            text-align: center;
+            color: #6b748b;
+            font-size: 0.85rem;
+            border-top: 1px solid #dfe4ed;
+            padding-top: 1.8rem;
+            letter-spacing: 0.2px;
+        }
+
+        .footer-note a {
+            color: #3a607a;
+            text-decoration: none;
+            border-bottom: 1px dotted #a5b9cb;
+        }
+
+        .footer-note a:hover {
+            border-bottom: 1px solid #3a607a;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 3rem 1.2rem 2.2rem; }
+            .content { padding: 2rem 1.2rem; }
+            .summary-card { padding: 1.5rem; }
+            .scenario-section { padding: 1.2rem 1.5rem; }
+            .notice-callout { padding: 1.2rem 1.4rem; flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 深色头图 -->
+<header class="hero">
+    <h1>德州扑克在线 · 产品说明</h1>
+    <p class="tagline">基于稳定访问方式与清晰功能梳理，帮助使用者快速了解平台定位与使用场景。</p>
+    <span class="meta-badge">入口说明 · 稳健体验</span>
+</header>
+
+<!-- 正文：浅色区 -->
+<main class="content">
+
+    <!-- 摘要：从稳定入口开始 -->
+    <section class="summary-card">
+        <h2>摘要</h2>
+        <p>对于希望在桌面端或移动端获得<strong>德州扑克在线</strong>体验的用户而言，一个清晰且长期可用的入口是基础前提。该平台将核心功能集中于牌局模拟、策略练习与休闲对局，界面响应逻辑以直觉操作为主，减少复杂配置负担。</p>
+        <p>本页面旨在提供客观的产品说明与使用建议，不包含奖励承诺或诱导性话术。访问前建议确认网络环境稳定，并了解对应规则与条款。</p>
+    </section>
+
+    <!-- 亮点卡片 -->
+    <h2 style="font-weight:450; margin-bottom:0.2rem; color:#1d2638;">功能亮点</h2>
+    <div class="features-grid">
+        <div class="feature-item">
+            <div class="feature-icon">♠</div>
+            <h3>牌桌逻辑</h3>
+            <p>底池计算、位置轮换与下注轮次均采用通用规则引擎，适合从入门到进阶的玩家进行手牌复盘。</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">♥</div>
+            <h3>设备适配</h3>
+            <p>基于响应式布局，在笔记本与平板设备上均可获得完整牌桌视图，按钮与筹码区域触控友好。</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">♦</div>
+            <h3>无干扰设计</h3>
+            <p>界面中不嵌入无关广告或弹窗，对局过程中保持信息层级简洁，避免视觉疲劳影响判断。</p>
+        </div>
+    </div>
+
+    <!-- 使用建议 / 场景切入 -->
+    <section class="scenario-section">
+        <h3>使用建议 · 从入口到稳定使用</h3>
+        <p style="margin-bottom:0.8rem; color:#2c3548;">以下场景有助于你快速评估是否匹配当前需求：</p>
+        <ul>
+            <li>日常策略复盘与手牌回顾</li>
+            <li>与朋友约定同一时间进行线上友谊局</li>
+            <li>在低干扰环境下练习下注节奏与读牌</li>
+            <li>通过多桌功能测试自身注意力分配</li>
+        </ul>
+        <p style="margin-top:1.2rem; font-size:0.95rem; color:#3f4b61;">若你需要稳定的入口，可以直接将 <a href="https://web-dezhou.com" class="accent-link">德州扑克在线</a> 添加至浏览器书签栏，或将其设为常用工具。</p>
+    </section>
+
+    <!-- 可信但克制的访问说明 -->
+    <div class="notice-callout">
+        <span class="label">访问说明</span>
+        <p>本平台不存储用户资金或虚拟货币，不提供任何形式的博彩兑换渠道。所有牌局均为练习与娱乐目的，请合理分配时间并遵守当地法规。初次加载时建议使用 Wi-Fi 或稳定数据连接，以获得流畅的牌面渲染。</p>
+    </div>
+
+    <!-- FAQ 摘要 — 精简但实用 -->
+    <section class="faq-mini">
+        <details>
+            <summary>是否需要注册账户？</summary>
+            <div class="faq-answer">部分功能支持游客模式进入，但若要保存手牌历史或自定义偏好，建议通过简洁的注册流程完成身份关联，注册信息仅用于本地化存档。</div>
+        </details>
+        <details>
+            <summary>移动端与桌面端体验是否一致？</summary>
+            <div class="faq-answer">核心牌桌逻辑与交互流程保持一致；移动端下底牌区域会自适应放大，确保操作精度不受屏幕尺寸影响。</div>
+        </details>
+        <details>
+            <summary>平台是否提供 AI 陪练？</summary>
+            <div class="faq-answer">当前版本包含基础 NPC 对手，其行动逻辑基于预设范围与随机种子，适合练习基本决策，但不代表真人玩家思维模式。</div>
+        </details>
+    </section>
+
+    <!-- 底部一句话 + 再次自然嵌入链接 -->
+    <footer class="footer-note">
+        <p>若你需要回顾上述使用场景，可直接访问 <a href="https://web-dezhou.com">德州扑克在线</a> · 版本说明持续更新</p>
+        <p style="margin-top:0.5rem; opacity:0.7;">产品描述仅供参考，实际界面以页面加载后呈现为准</p>
+    </footer>
+</main>
+
+</body>
+</html>
