@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>雷速 · 信息从容流动</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f4f9fc;
+      color: #1a2b3c;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    /* hero 横幅 */
+    .hero {
+      margin-top: 32px;
+      margin-bottom: 40px;
+      background: linear-gradient(145deg, #d4ece6 0%, #b0d9d0 100%);
+      border-radius: 32px;
+      padding: 48px 28px 36px 28px;
+      box-shadow: 0 8px 20px rgba(56, 128, 120, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -40px;
+      width: 180px;
+      height: 180px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #0d3b40;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .subhead {
+      font-size: 1rem;
+      color: #1f5b5e;
+      margin-top: 12px;
+      max-width: 80%;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 卡片网格 */
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 12px rgba(0, 40, 50, 0.05);
+      border: 1px solid rgba(150, 195, 190, 0.2);
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(40, 130, 130, 0.08);
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #135a5a;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card h2::before {
+      content: '◆';
+      font-size: 0.9rem;
+      color: #2f9c8a;
+      opacity: 0.7;
+    }
+
+    .card p {
+      font-size: 0.98rem;
+      color: #2d404a;
+      margin-bottom: 12px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      background: #e3f3ef;
+      border-radius: 6px;
+      padding: 2px 8px;
+      color: #11665a;
+      font-weight: 450;
+    }
+
+    /* 内嵌链接样式：保持自然 */
+    a {
+      color: #1d7c72;
+      text-decoration: none;
+      border-bottom: 1.5px solid #b6dbd2;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #0b4e47;
+      border-bottom-color: #0b4e47;
+    }
+
+    .faq-summary {
+      background: #edf6f3;
+      border-radius: 20px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      border-left: 4px solid #57b2a3;
+    }
+
+    .faq-summary h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #0b4a46;
+      margin-bottom: 10px;
+    }
+
+    .faq-summary p {
+      font-size: 0.94rem;
+      color: #29545a;
+      margin-bottom: 8px;
+    }
+
+    .faq-summary p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* 页尾 */
+    .footer-note {
+      margin-top: 8px;
+      margin-bottom: 48px;
+      text-align: center;
+      font-size: 0.92rem;
+      color: #6b8d89;
+      border-top: 1px solid #d0e3df;
+      padding-top: 28px;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-note span {
+      background: #e2f0ec;
+      padding: 6px 18px;
+      border-radius: 40px;
+      display: inline-block;
+    }
+
+    /* 响应式 */
+    @media (max-width: 500px) {
+      .hero { padding: 36px 20px 28px 20px; }
+      .hero h1 { font-size: 2rem; }
+      .hero .subhead { max-width: 100%; }
+      .card { padding: 22px 18px; }
+      .grid { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- hero 首页横幅 -->
+  <div class="hero">
+    <h1>雷速</h1>
+    <div class="subhead">信息聚合，不止于快 · 一种安静的连接方式</div>
+  </div>
+
+  <!-- 三段自然介绍 + 网格卡片 -->
+  <div class="grid">
+
+    <div class="card">
+      <h2>流动的资讯景深</h2>
+      <p>
+        每天都有大量的消息从不同角落涌来。我们并非要追逐每一条波浪，而是希望提供一种「有景深」的阅读体验——让你在浏览<span class="highlight">雷速</span>时，既能看到最表层的动态，也能触到背后的脉络。就像站在河边，水面湍急，但河床的形状始终可辨。
+      </p>
+      <p>
+        频道与标签构成了一种轻盈的索引，你可以在其中慢慢走，不必担心迷失在碎片里。
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>界面之下的秩序</h2>
+      <p>
+        我们并不认为信息越密越好。相反，适度的留白、克制的配色、卡片式的分层，都是为了降低认知负荷。<a href="https://m-wap-leisu.com">雷速</a>的设计原则是让内容自己说话，而不是让框架喧宾夺主。蓝绿色的点缀像呼吸一样自然出现在按钮和分割线中，既不冷淡，也不轻佻。
+      </p>
+      <p>
+        在移动端，每一屏的容量都被仔细考量。你不需要缩放或左右滑动，只需要上下翻阅，像翻阅一本轻巧的册子。
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>场景与习惯</h2>
+      <p>
+        有人在通勤的地铁上打开<span class="highlight">雷速</span>，快速扫一眼标题；也有人习惯在睡前安静地读两篇长文，把零散的片段拼成更完整的画面。我们欢迎不同的使用习惯，因为每个读者都带着自己的背景和疑问。
+      </p>
+      <p>
+        没有算法驱动的无限刷新，也没有夸张的推送提醒。一切回到阅读本身——你决定节奏，你选择焦点。
+      </p>
+    </div>
+  </div>
+
+  <!-- FAQ摘要 / 补充说明 -->
+  <div class="faq-summary">
+    <h3>常见疑问 · 摘要</h3>
+    <p><strong>Q：</strong> 我需要注册才能浏览吗？<br>
+    <strong>A：</strong> 大部分内容可直接阅读，部分互动功能可能需要简单注册，但过程很轻。</p>
+    <p><strong>Q：</strong> 内容来源是否可靠？<br>
+    <strong>A：</strong> 所有聚合内容均标注原始出处，我们鼓励交叉验证，不代替独立思考。</p>
+    <p><strong>Q：</strong> 移动端体验如何优化？<br>
+    <strong>A：</strong> 页面自适应各种屏幕，字体大小、间距都经过专门调整。你也可以在浏览器中把 <a href="https://m-wap-leisu.com">雷速</a> 添加到主屏幕，获得类似应用的体验。</p>
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <div class="footer-note">
+    <span>如果你愿意，可以随时打开 <a href="https://m-wap-leisu.com">雷速</a>，继续你的阅读。</span>
+  </div>
+
+</div>
+</body>
+</html>
